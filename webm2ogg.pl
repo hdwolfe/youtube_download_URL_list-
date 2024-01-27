@@ -12,7 +12,7 @@ chomp(@webm);
 @lines=<input>;
 chomp(@lines);
 
-#run turn from webm to ogg
+#convert from webm to ogg
 foreach $x (@lines) {
 system("ffmpeg -i "$x\n" -vn -c:a libvorbis -qscale:a 6 "$(basename "$x\n" .webm)".ogg");
 }
